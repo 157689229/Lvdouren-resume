@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>任茂常 | 视频作品集</title>
+  <style>
+    :root {
+      --bg: #f7efe2;
+      --bg-soft: #efe2cd;
+      --paper: rgba(255, 251, 245, 0.86);
+      --card: #fffdf9;
+      --text: #201814;
+      --sub: #5f5248;
+      --muted: #8d7c6d;
+      --line: rgba(126, 102, 74, 0.18);
+      --accent: #b88649;
+      --accent-strong: #8b5d24;
+      --accent-soft: #f1dcc0;
+      --shadow: 0 24px 60px rgba(53, 36, 21, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(216, 185, 138, 0.32), transparent 28%),
+        radial-gradient(circle at top right, rgba(124, 85, 44, 0.12), transparent 22%),
+        linear-gradient(180deg, #fbf5eb 0%, var(--bg) 55%, #f4ead8 100%);
+      font-family: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.22), transparent 65%);
+      opacity: 0.35;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .shell {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .sans {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      background: rgba(247, 239, 226, 0.72);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .brand strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+    }
+
+    .brand span,
+    .topnav a,
+    .eyebrow,
+    .metric-label,
+    .tag,
+    .pill,
+    .contact-inline,
+    .small-note,
+    .filter button {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    .brand span,
+    .topnav a,
+    .small-note {
+      color: var(--muted);
+    }
+
+    .topnav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .topnav a {
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 52px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      padding: 16px;
+    }
+
+    .portrait-wrap::before,
+    .portrait-wrap::after {
+      content: "";
+      position: absolute;
+      border-radius: 28px;
+      inset: 0;
+    }
+
+    .portrait-wrap::before {
+      background: linear-gradient(145deg, rgba(184, 134, 73, 0.28), rgba(255, 255, 255, 0.2));
+      transform: rotate(-4deg);
+    }
+
+    .portrait-wrap::after {
+      inset: 20px -8px -8px 20px;
+      border: 1px dashed rgba(139, 93, 36, 0.32);
+      transform: rotate(2deg);
+    }
+
+    .portrait {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      background: linear-gradient(180deg, #fff5e7 0%, #dcc3a4 100%);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portrait-badge {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(28, 20, 15, 0.64);
+      color: #fdf6ea;
+      backdrop-filter: blur(12px);
+    }
+
+    .portrait-badge strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .portrait-badge span {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.82rem;
+      color: rgba(253, 246, 234, 0.74);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .hero h1 {
+      margin-top: 14px;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1.05;
+    }
+
+    .lead {
+      margin-top: 18px;
+      max-width: 740px;
+      color: var(--sub);
+      line-height: 1.95;
+      font-size: 1.02rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button-primary,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, #231914, #5f4022);
+      color: #fbf5eb;
+      box-shadow: 0 18px 36px rgba(43, 26, 9, 0.18);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(126, 102, 74, 0.28);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .button-primary:hover,
+    .button-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .contact-inline {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(126, 102, 74, 0.18);
+      background: rgba(255, 255, 255, 0.45);
+      color: var(--sub);
+      font-size: 0.92rem;
+    }
+
+    .metrics {
+      padding: 18px 0 42px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .metric {
+      padding: 24px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 249, 0.9);
+      box-shadow: 0 12px 30px rgba(53, 36, 21, 0.05);
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 2rem;
+    }
+
+    .metric-label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    section {
+      padding: 38px 0;
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+    }
+
+    .section-head p {
+      max-width: 680px;
+      color: var(--sub);
+      line-height: 1.88;
+    }
+
+    .strength-grid,
+    .skills-grid,
+    .portfolio-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .strength-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 253, 250, 0.96), rgba(255, 248, 241, 0.88));
+      box-shadow: 0 16px 34px rgba(53, 36, 21, 0.06);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -80px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184, 134, 73, 0.12), transparent 66%);
+    }
+
+    .icon-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 1.25rem;
+    }
+
+    .card p,
+    .timeline-copy,
+    .skill-list,
+    .portfolio-desc,
+    .quote-text,
+    .cta p {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    .card p {
+      margin-top: 10px;
+      color: var(--sub);
+      line-height: 1.82;
+    }
+
+    .filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .filter button {
+      border: 1px solid rgba(126, 102, 74, 0.26);
+      background: transparent;
+      color: var(--sub);
+      border-radius: 999px;
+      padding: 10px 18px;
+      cursor: pointer;
+      transition: all 180ms ease;
+    }
+
+    .filter button.active {
+      background: #251a15;
+      color: #fbf5eb;
+      border-color: #251a15;
+    }
+
+    .portfolio-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .portfolio-cover {
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      border: 1px solid rgba(126, 102, 74, 0.16);
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.26), transparent 52%),
+        linear-gradient(135deg, #ecdabf, #d7be9e 58%, #eadfcd);
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .cover-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(37, 26, 21, 0.72);
+      color: #fef6ea;
+      font-size: 0.86rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .portfolio-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .small-type {
+      color: var(--accent);
+      font-size: 0.76rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .portfolio-desc {
+      margin-top: 12px;
+      color: var(--sub);
+      line-height: 1.84;
+    }
+
+    .small-note {
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.82rem;
+    }
+
+    .highlight {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(247, 239, 226, 0.94), rgba(241, 220, 192, 0.82));
+      border: 1px solid rgba(184, 134, 73, 0.18);
+      color: var(--accent-strong);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .timeline-track {
+      position: relative;
+    }
+
+    .timeline-track::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: -18px;
+      width: 2px;
+      background: rgba(126, 102, 74, 0.25);
+    }
+
+    .timeline-item:last-child .timeline-track::before {
+      bottom: 30px;
+    }
+
+    .timeline-dot {
+      position: relative;
+      z-index: 1;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 4px solid #f3e5d1;
+      box-shadow: 0 0 0 2px rgba(184, 134, 73, 0.48);
+    }
+
+    .timeline-card {
+      padding: 22px 24px;
+      border-radius: 20px;
+      background: rgba(255, 251, 245, 0.85);
+      border: 1px solid var(--line);
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .timeline-role {
+      margin-top: 8px;
+      font-size: 1.1rem;
+    }
+
+    .timeline-company {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .timeline-copy {
+      margin-top: 10px;
+      color: var(--sub);
+      line-height: 1.8;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .skill-card h3 {
+      font-size: 1rem;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(184, 134, 73, 0.16);
+    }
+
+    .skill-list {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-list span {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(126, 102, 74, 0.14);
+      background: rgba(247, 239, 226, 0.72);
+      color: var(--sub);
+      font-size: 0.85rem;
+    }
+
+    .dual-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .quote {
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(247, 239, 226, 0.8);
+    }
+
+    .quote+.quote {
+      margin-top: 12px;
+    }
+
+    .quote-text {
+      color: var(--text);
+      line-height: 1.78;
+      font-style: italic;
+    }
+
+    .quote-name {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .cta {
+      margin: 8px 0 56px;
+      padding: 34px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #201713, #50351d 58%, #7c5732);
+      color: #fdf4e4;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta p {
+      margin-top: 14px;
+      max-width: 620px;
+      color: rgba(253, 244, 228, 0.76);
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 0 0 28px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+
+      .hero-grid,
+      .strength-grid,
+      .portfolio-grid,
+      .skills-grid,
+      .dual-grid,
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+
+      .topbar-inner,
+      .topnav,
+      .hero-actions,
+      .contact-inline,
+      .cta-grid {
+        align-items: flex-start;
+      }
+
+      .hero-grid,
+      .strength-grid,
+      .portfolio-grid,
+      .skills-grid,
+      .dual-grid,
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .topbar-inner {
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      .cta,
+      .card,
+      .timeline-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">
+        <strong>任茂常</strong>
+        <span class="sans">Video Editor · Content Creator</span>
+      </div>
+      <nav class="topnav sans">
+        <a href="#portfolio">作品集</a>
+        <a href="#experience">经历</a>
+        <a href="#skills">技能</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="portrait-wrap reveal">
+          <div class="portrait">
+            <img src="简历照片.JPG" alt="任茂常简历照片" />
+            <div class="portrait-badge sans">
+              <strong>内容逻辑驱动型视频创作者</strong>
+              <span>脚本、拍摄、剪辑、包装、平台表达</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="eyebrow reveal">Portfolio Preview</div>
+          <h1 class="reveal">Hey Friends</h1>
+          <p class="lead sans reveal">
+            我是任茂常，传播学本科出身，经历过校园影视创作、四川省广播电视台实习，以及正式岗位中的品牌内容与人物采访项目。相比只做后期执行，我更擅长把前期策划、现场拍摄、后期包装和传播目标放在同一条内容逻辑里，让作品既有表达，也有结果。
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="button-primary sans" href="#portfolio">查看作品方向</a>
+            <a class="button-secondary sans" href="mailto:157689229@qq.com">联系我</a>
+            <div class="contact-inline">
+              <div class="pill">邮箱 · 157689229@qq.com</div>
+              <div class="pill">电话 · 17354485109</div>
+              <div class="pill">城市 · 广东东莞 / 深圳</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <article class="metric reveal">
+        <div class="metric-value">8万+</div>
+        <div class="metric-label">企鹅号粉丝</div>
+      </article>
+      <article class="metric reveal">
+        <div class="metric-value">1600万+</div>
+        <div class="metric-label">视频总播放量</div>
+      </article>
+      <article class="metric reveal">
+        <div class="metric-value">28万</div>
+        <div class="metric-label">抖音单条最高</div>
+      </article>
+      <article class="metric reveal">
+        <div class="metric-value">5万</div>
+        <div class="metric-label">B站单条最高</div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head reveal">
+        <div class="eyebrow">Strengths</div>
+        <h2>我能补上的，不只是一个剪辑岗位。</h2>
+        <p class="sans">这页网站做成了可直接双击打开的静态版本，适合投递时发给 HR、主管或客户预览，也方便后续继续补真实作品封面与视频链接。</p>
+      </div>
+
+      <div class="strength-grid">
+        <article class="card reveal">
+          <div class="icon-chip">影</div>
+          <h3>传统媒体 + 新媒体双线经验</h3>
+          <p>做过电视台实习、新闻短片、访谈节目、融媒体项目，也做过自媒体账号和企业短视频内容，能适应不同语境下的内容表达方式。</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon-chip">剪</div>
+          <h3>能写能拍能剪</h3>
+          <p>不仅会后期，也能参与脚本撰写、采访提纲、拍摄执行和成片包装，适合综合型视频岗位和节奏较快的内容团队。</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon-chip">传</div>
+          <h3>懂内容目标和传播场景</h3>
+          <p>会把剪辑放进项目表达、平台分发和品牌内容里思考，让作品既服务业务，也照顾观众的理解成本。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="section-head reveal">
+        <div class="eyebrow">Portfolio</div>
+        <h2>作品方向展示</h2>
+        <p class="sans">下面保留了分类筛选。以后你只需要把每个项目卡片里的“封面占位”和“查看链接”补成真实内容，这个站就可以直接继续用。</p>
+      </div>
+
+      <div class="filter">
+        <button class="active" data-filter="全部">全部</button>
+        <button data-filter="正式工作">正式工作</button>
+        <button data-filter="传统媒体">传统媒体</button>
+        <button data-filter="校园项目">校园项目</button>
+        <button data-filter="自媒体账号">自媒体账号</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-grid"></div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head reveal">
+        <div class="eyebrow">Experience</div>
+        <h2>经历概览</h2>
+        <p class="sans">把校园积累、实习经验、正式岗位和个人账号运营并列排开，能更清楚地说明你的成长路径和岗位适配度。</p>
+      </div>
+
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head reveal">
+        <div class="eyebrow">Skills</div>
+        <h2>技能结构</h2>
+        <p class="sans">软件能力、内容执行和 AI 辅助能力拆开呈现，更符合内容岗位查看简历时的阅读方式。</p>
+      </div>
+
+      <div class="skills-grid" id="skills-grid"></div>
+
+      <div class="dual-grid">
+        <article class="card reveal">
+          <div class="eyebrow">Why Me</div>
+          <h3 style="margin-top: 10px; font-size: 1.4rem;">我适合什么团队</h3>
+          <p>更适合品牌内容团队、新媒体部门、宣传部门、老板 IP 团队和中小型内容团队。因为这类岗位需要的不是单点剪辑，而是对内容目标、执行效率、沟通协作和项目表达的综合把控。</p>
+        </article>
+        <article class="card reveal">
+          <div class="eyebrow">Feedback</div>
+          <h3 style="margin-top: 10px; font-size: 1.4rem;">协作印象</h3>
+          <div class="quote">
+            <div class="quote-text">“优势不只是会剪片，而是具备内容理解、项目协作和多平台表达能力。”</div>
+            <div class="quote-name sans">岗位匹配总结</div>
+          </div>
+          <div class="quote">
+            <div class="quote-text">“既有校园阶段的作品积累，也已经有正式岗位中的真实业务内容经验。”</div>
+            <div class="quote-name sans">网站定位总结</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cta reveal">
+        <div class="cta-grid">
+          <div>
+            <div class="eyebrow" style="color: #e5b46e;">Next Step</div>
+            <h2 style="margin-top: 10px;">作品先说话，合作再细聊</h2>
+            <p>你的联系方式已经前移到首屏，这里保留一个更轻的收尾。对外发送时，只要把整个文件夹打包给别人，对方双击这个 HTML 文件就能在本地直接打开网页。</p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="button-primary sans" href="#portfolio">继续看作品</a>
+            <a class="button-secondary sans" href="mailto:157689229@qq.com"
+              style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); color: #fdf4e4;">发邮件</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sans">© 2026 任茂常 · 用内容逻辑做好每一条视频</footer>
+
+  <script>
+    const portfolioItems = [
+      {
+        title: "湾区优品人物采访与品牌内容系列",
+        type: "正式工作",
+        role: "选题策划 / 采访提纲 / 拍摄 / 剪辑 / 包装",
+        desc: "围绕湾区优品相关品牌、企业负责人和供应链故事，完成采访提纲、镜头组织、成片节奏和字幕包装，服务品牌背书与项目传播。",
+        tags: ["人物采访", "品牌内容", "项目包装"],
+        metric: "当前正式工作中的核心内容方向",
+      },
+      {
+        title: "供应链与垂类短视频内容",
+        type: "正式工作",
+        role: "脚本拆解 / 拍摄执行 / 剪辑 / AI辅助内容生产",
+        desc: "参与潮玩、留学、供应链等方向的短视频内容生产，兼顾项目表达、平台传播和效率型内容工作流。",
+        tags: ["短视频", "垂类内容", "AI工作流"],
+        metric: "体现当前岗位的多题材内容适配能力",
+      },
+      {
+        title: "四川观察新闻短片项目",
+        type: "传统媒体",
+        role: "拍摄 / 剪辑",
+        desc: "在四川省广播电视台实习期间，参与《川大英才学子》《成都市双林小学》等内容制作，作品登上四川观察，积累了新闻类内容的拍摄与后期经验。",
+        tags: ["新闻拍摄", "电视媒体", "成片剪辑"],
+        metric: "作品曾在四川观察平台发布",
+      },
+      {
+        title: "《法国吃货寻味记》融媒体项目",
+        type: "传统媒体",
+        role: "项目参与 / 视频制作",
+        desc: "围绕中法建交六十年相关主题参与融媒体内容制作，作品先后在四川卫视、四川文旅、四川交通广播、微成都等官方媒体发布。",
+        tags: ["融媒体", "外宣内容", "官方发布"],
+        metric: "多平台官方媒体发布",
+      },
+      {
+        title: "《乡村会客厅》访谈节目",
+        type: "传统媒体",
+        role: "脚本撰写 / 嘉宾联系 / 演播厅拍摄 / 后期剪辑",
+        desc: "全程参与四川卫视《乡村会客厅》之《气候变化下的农业“生存”之道》内容制作，完整经历节目型项目从前期到后期的执行流程。",
+        tags: ["节目制作", "演播厅拍摄", "全流程协作"],
+        metric: "具备完整的大型访谈节目参与经验",
+      },
+      {
+        title: "校园影视与专题作品集",
+        type: "校园项目",
+        role: "团队负责人 / 策划 / 拍摄 / 剪辑",
+        desc: "在校期间担任团队主要负责人，参与制作新闻专题片《红色剧本杀》《滠水河》，微电影《我看见了》，MV《小娟》，影视广告《银鹭花生牛奶》等多类作品。",
+        tags: ["专题片", "微电影", "广告短片"],
+        metric: "覆盖专题、剧情、MV、广告等多种视频类型",
+      },
+      {
+        title: "个人自媒体内容运营",
+        type: "自媒体账号",
+        role: "选题 / 文案 / 剪辑 / 运营",
+        desc: "独立运营多个内容平台，熟悉企鹅号、抖音、B站、小红书等不同平台调性，能根据平台特征调整视频结构和表达方式。",
+        tags: ["账号运营", "平台适配", "内容策划"],
+        metric: "企鹅号8万粉，视频总播放量1600余万",
+      },
+    ];
+
+    const timeline = [
+      {
+        period: "2025.07 - 至今",
+        title: "新媒体运营 / 内容策划 / 拍摄剪辑",
+        company: "粤贸全球湾区优品展贸中心",
+        desc: "负责湾区优品相关内容的视频策划、采访提纲、拍摄执行、后期剪辑、字幕包装和 AI 辅助内容生产，覆盖人物采访、品牌表达、供应链与垂类短视频等方向。",
+      },
+      {
+        period: "2024",
+        title: "四川省广播电视台实习",
+        company: "传统媒体项目实践",
+        desc: "参与新闻短片、融媒体内容和访谈节目制作，接触电视媒体标准化制作流程，完成拍摄、脚本、联络和后期等多环节工作。",
+      },
+      {
+        period: "2021.09 - 2025.06",
+        title: "武汉文理学院 传播学本科",
+        company: "校园影视项目与课程训练",
+        desc: "系统学习摄影摄像、新媒体运营、影视后期特效与合成等课程，在校期间持续参与专题片、微电影、MV、广告短片等项目制作。",
+      },
+      {
+        period: "在校期间",
+        title: "个人自媒体内容创作",
+        company: "多平台账号运营实践",
+        desc: "积累娱乐、摄影干货、热点分析等内容经验，形成从选题、脚本到剪辑发布的一体化能力，具备较强的平台感知和执行力。",
+      },
+    ];
+
+    const skillGroups = [
+      {
+        name: "后期软件",
+        items: ["Premiere Pro", "After Effects", "Final Cut Pro", "剪映专业版", "Photoshop"],
+      },
+      {
+        name: "设计与辅助",
+        items: ["Illustrator", "Animate", "WPS", "醒图", "基础视觉包装"],
+      },
+      {
+        name: "内容与执行",
+        items: ["摄影摄像", "脚本撰写", "采访提纲", "新媒体运营", "跨平台内容适配"],
+      },
+      {
+        name: "效率与AI",
+        items: ["AI配音", "AI数字人口播", "内容批量化思维", "素材整理", "基础工作流搭建"],
+      },
+    ];
+
+    const portfolioGrid = document.getElementById("portfolio-grid");
+    const timelineRoot = document.getElementById("timeline");
+    const skillsRoot = document.getElementById("skills-grid");
+    const filterButtons = document.querySelectorAll("[data-filter]");
+
+    function renderPortfolio(filter = "全部") {
+      const visibleItems = filter === "全部"
+        ? portfolioItems
+        : portfolioItems.filter((item) => item.type === filter);
+
+      portfolioGrid.innerHTML = visibleItems
+        .map(
+          (item) => `
+              <article class="card reveal portfolio-item" data-type="${item.type}">
+                <div class="portfolio-cover">
+                  <div class="cover-mark sans">待替换真实作品封面</div>
+                </div>
+                <div class="portfolio-meta">
+                  <div>
+                    <div class="small-type sans">${item.type}</div>
+                    <h3 style="margin-top: 6px; font-size: 1.18rem;">${item.title}</h3>
+                  </div>
+                  <div class="pill sans" style="padding: 8px 12px; white-space: nowrap;">可补视频链接</div>
+                </div>
+                <p class="portfolio-desc">${item.desc}</p>
+                <div class="small-note">负责环节：${item.role}</div>
+                <div class="tags">${item.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
+                <div class="highlight">${item.metric}</div>
+              </article>
+            `
+        )
+        .join("");
+
+      observeReveals();
+    }
+
+    timelineRoot.innerHTML = timeline
+      .map(
+        (item) => `
+            <article class="timeline-item reveal">
+              <div class="timeline-track">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-card">
+                <div class="timeline-date sans">${item.period}</div>
+                <h3 class="timeline-role">${item.title}</h3>
+                <div class="timeline-company sans">${item.company}</div>
+                <p class="timeline-copy">${item.desc}</p>
+              </div>
+            </article>
+          `
+      )
+      .join("");
+
+    skillsRoot.innerHTML = skillGroups
+      .map(
+        (group) => `
+            <article class="card skill-card reveal">
+              <h3>${group.name}</h3>
+              <div class="skill-list">
+                ${group.items.map((item) => `<span>${item}</span>`).join("")}
+              </div>
+            </article>
+          `
+      )
+      .join("");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        renderPortfolio(button.dataset.filter);
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    function observeReveals() {
+      document.querySelectorAll(".reveal:not(.visible)").forEach((element) => {
+        revealObserver.observe(element);
+      });
+    }
+
+    renderPortfolio();
+    observeReveals();
+  </script>
+</body>
+
+</html>
