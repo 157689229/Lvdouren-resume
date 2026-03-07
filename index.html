@@ -447,6 +447,31 @@
       backdrop-filter: blur(8px);
     }
 
+    .sample-list {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sample-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(126, 102, 74, 0.16);
+      background: rgba(255, 255, 255, 0.56);
+      color: var(--sub);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 0.84rem;
+      text-decoration: none;
+    }
+
+    .sample-link.is-static {
+      cursor: default;
+    }
+
     .portfolio-meta {
       display: flex;
       justify-content: space-between;
@@ -754,7 +779,7 @@
           <div class="eyebrow reveal">Portfolio Preview</div>
           <h1 class="reveal">Hey Friends</h1>
           <p class="lead sans reveal">
-            我是任茂常，传播学本科出身，经历过校园影视创作、四川省广播电视台实习，以及正式岗位中的品牌内容与人物采访项目。相比只做后期执行，我更擅长把前期策划、现场拍摄、后期包装和传播目标放在同一条内容逻辑里，让作品既有表达，也有结果。
+            我是任茂常，传播学本科出身，经历过校园影视创作、四川省广播电视台实习，以及正式岗位中的BACP品牌内容与人物采访项目。相比只做后期执行，我更擅长把前期策划、现场拍摄、后期包装和传播目标放在同一条内容逻辑里，让作品既有表达，也有结果。
           </p>
 
           <div class="hero-actions reveal">
@@ -780,7 +805,7 @@
         <div class="metric-label">视频总播放量</div>
       </article>
       <article class="metric reveal">
-        <div class="metric-value">28万</div>
+        <div class="metric-value">36万</div>
         <div class="metric-label">抖音单条最高</div>
       </article>
       <article class="metric reveal">
@@ -819,15 +844,14 @@
       <div class="section-head reveal">
         <div class="eyebrow">Portfolio</div>
         <h2>作品方向展示</h2>
-        <p class="sans">下面保留了分类筛选。以后你只需要把每个项目卡片里的“封面占位”和“查看链接”补成真实内容，这个站就可以直接继续用。</p>
+        <p class="sans">下面保留了分类筛选，并已按你当前文件夹里的视频文件名做了一轮本地配对。后续如果你给我更准确的项目说明、发布时间或平台链接，我可以再继续精修每张卡片。</p>
       </div>
 
       <div class="filter">
         <button class="active" data-filter="全部">全部</button>
-        <button data-filter="正式工作">正式工作</button>
-        <button data-filter="传统媒体">传统媒体</button>
+        <button data-filter="工作项目">工作项目</button>
+        <button data-filter="实习项目">实习项目</button>
         <button data-filter="校园项目">校园项目</button>
-        <button data-filter="自媒体账号">自媒体账号</button>
       </div>
 
       <div class="portfolio-grid" id="portfolio-grid"></div>
@@ -878,8 +902,8 @@
         <div class="cta-grid">
           <div>
             <div class="eyebrow" style="color: #e5b46e;">Next Step</div>
-            <h2 style="margin-top: 10px;">作品先说话，合作再细聊</h2>
-            <p>你的联系方式已经前移到首屏，这里保留一个更轻的收尾。对外发送时，只要把整个文件夹打包给别人，对方双击这个 HTML 文件就能在本地直接打开网页。</p>
+            <h2 style="margin-top: 10px;">期待加入更有内容判断力的团队</h2>
+            <p>如果你的团队正在寻找兼具内容理解、拍摄执行、后期剪辑与传播意识的视频创作者，欢迎进一步沟通。期待参与更多有表达价值、也有实际结果的内容项目。</p>
           </div>
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <a class="button-primary sans" href="#portfolio">继续看作品</a>
@@ -896,60 +920,92 @@
   <script>
     const portfolioItems = [
       {
-        title: "湾区优品人物采访与品牌内容系列",
-        type: "正式工作",
-        role: "选题策划 / 采访提纲 / 拍摄 / 剪辑 / 包装",
-        desc: "围绕湾区优品相关品牌、企业负责人和供应链故事，完成采访提纲、镜头组织、成片节奏和字幕包装，服务品牌背书与项目传播。",
-        tags: ["人物采访", "品牌内容", "项目包装"],
-        metric: "当前正式工作中的核心内容方向",
+        title: "BACP湾区宣传片",
+        type: "工作项目",
+        role: "选题策划 / 拍摄 / 剪辑 / 包装",
+        desc: "围绕品牌传播目标完成宣传片内容制作，从前期策划到后期包装保持统一表达，能够兼顾品牌调性、信息传递效率与成片节奏感。",
+        tags: ["品牌内容", "宣传片", "工作项目"],
+        metric: "正式工作阶段核心代表作品",
+        samples: [
+          { label: "BACP湾区宣传片" }
+        ]
       },
       {
-        title: "供应链与垂类短视频内容",
-        type: "正式工作",
-        role: "脚本拆解 / 拍摄执行 / 剪辑 / AI辅助内容生产",
-        desc: "参与潮玩、留学、供应链等方向的短视频内容生产，兼顾项目表达、平台传播和效率型内容工作流。",
-        tags: ["短视频", "垂类内容", "AI工作流"],
-        metric: "体现当前岗位的多题材内容适配能力",
+        title: "山梓文化",
+        type: "工作项目",
+        role: "内容策划 / 拍摄执行 / 后期剪辑",
+        desc: "聚焦文化主题表达与品牌内容包装，在画面气质、叙事节奏和传播适配之间取得平衡，体现正式工作阶段较完整的内容执行能力。",
+        tags: ["品牌内容", "文化项目", "内容包装"],
+        metric: "正式工作阶段补充样片",
+        samples: [
+          { label: "山梓文化" }
+        ]
       },
       {
-        title: "四川观察新闻短片项目",
-        type: "传统媒体",
-        role: "拍摄 / 剪辑",
-        desc: "在四川省广播电视台实习期间，参与《川大英才学子》《成都市双林小学》等内容制作，作品登上四川观察，积累了新闻类内容的拍摄与后期经验。",
-        tags: ["新闻拍摄", "电视媒体", "成片剪辑"],
-        metric: "作品曾在四川观察平台发布",
-      },
-      {
-        title: "《法国吃货寻味记》融媒体项目",
-        type: "传统媒体",
+        title: "非尝不可",
+        type: "实习项目",
         role: "项目参与 / 视频制作",
-        desc: "围绕中法建交六十年相关主题参与融媒体内容制作，作品先后在四川卫视、四川文旅、四川交通广播、微成都等官方媒体发布。",
-        tags: ["融媒体", "外宣内容", "官方发布"],
-        metric: "多平台官方媒体发布",
+        desc: "在融媒体项目中参与视频制作与内容表达，能够根据媒体发布需求完成主题提炼、镜头组织与成片输出，体现较强的项目协作能力。",
+        tags: ["融媒体", "实习项目", "官方发布"],
+        metric: "传统媒体项目代表作之一",
+        samples: [
+          { label: "非尝不可" }
+        ]
       },
       {
-        title: "《乡村会客厅》访谈节目",
-        type: "传统媒体",
+        title: "乡村会客厅",
+        type: "实习项目",
         role: "脚本撰写 / 嘉宾联系 / 演播厅拍摄 / 后期剪辑",
-        desc: "全程参与四川卫视《乡村会客厅》之《气候变化下的农业“生存”之道》内容制作，完整经历节目型项目从前期到后期的执行流程。",
+        desc: "完整参与访谈类节目从前期筹备到后期成片的制作流程，覆盖脚本、联络、拍摄与剪辑多个环节，体现较强的统筹意识与节目执行能力。",
         tags: ["节目制作", "演播厅拍摄", "全流程协作"],
         metric: "具备完整的大型访谈节目参与经验",
+        samples: [
+          { label: "乡村会客厅" }
+        ]
       },
       {
-        title: "校园影视与专题作品集",
+        title: "川大英才学子",
+        type: "实习项目",
+        role: "拍摄 / 剪辑",
+        desc: "新闻短片项目实践，按照电视媒体内容标准完成拍摄与后期剪辑，体现对新闻表达节奏、画面组织和成片规范性的把握能力。",
+        tags: ["新闻短片", "四川观察", "电视媒体"],
+        metric: "实习阶段新闻短片样片",
+        samples: [
+          { label: "川大英才学子" }
+        ]
+      },
+      {
+        title: "双林小学",
+        type: "实习项目",
+        role: "拍摄 / 剪辑",
+        desc: "参与新闻短片的拍摄与剪辑工作，在有限篇幅内完成信息梳理与画面表达，体现传统媒体项目中较稳定的执行能力与成片意识。",
+        tags: ["新闻拍摄", "电视媒体", "成片剪辑"],
+        metric: "作品曾在四川观察平台发布",
+        samples: [
+          { label: "双林小学" }
+        ]
+      },
+      {
+        title: "只此青绿",
+        type: "校园项目",
+        role: "团队协作 / 拍摄 / 剪辑 / 视觉表达",
+        desc: "校园阶段的影像创作项目，注重画面调度、镜头语言与整体氛围的统一，体现对视觉表达和成片质感的较早积累。",
+        tags: ["校园作品", "视觉表达", "影像剪辑"],
+        metric: "校园项目代表作之一",
+        samples: [
+          { label: "只此青绿" }
+        ]
+      },
+      {
+        title: "我看见了",
         type: "校园项目",
         role: "团队负责人 / 策划 / 拍摄 / 剪辑",
-        desc: "在校期间担任团队主要负责人，参与制作新闻专题片《红色剧本杀》《滠水河》，微电影《我看见了》，MV《小娟》，影视广告《银鹭花生牛奶》等多类作品。",
-        tags: ["专题片", "微电影", "广告短片"],
-        metric: "覆盖专题、剧情、MV、广告等多种视频类型",
-      },
-      {
-        title: "个人自媒体内容运营",
-        type: "自媒体账号",
-        role: "选题 / 文案 / 剪辑 / 运营",
-        desc: "独立运营多个内容平台，熟悉企鹅号、抖音、B站、小红书等不同平台调性，能根据平台特征调整视频结构和表达方式。",
-        tags: ["账号运营", "平台适配", "内容策划"],
-        metric: "企鹅号8万粉，视频总播放量1600余万",
+        desc: "剧情向影像作品，较完整地覆盖策划、拍摄与后期剪辑流程，能够体现校园阶段在叙事表达、团队协作和项目推进上的综合能力。",
+        tags: ["微电影", "校园项目", "全流程执行"],
+        metric: "校园阶段完整度较高的代表作品",
+        samples: [
+          { label: "我看见了" }
+        ]
       },
     ];
 
@@ -983,19 +1039,19 @@
     const skillGroups = [
       {
         name: "后期软件",
-        items: ["Premiere Pro", "After Effects", "Final Cut Pro", "剪映专业版", "Photoshop"],
+        items: ["Premiere Pro", "Final Cut Pro", "剪映专业版", "Photoshop"],
       },
       {
         name: "设计与辅助",
-        items: ["Illustrator", "Animate", "WPS", "醒图", "基础视觉包装"],
+        items: ["Nano-banana", "即梦", "WPS", "醒图"]
       },
       {
-        name: "内容与执行",
-        items: ["摄影摄像", "脚本撰写", "采访提纲", "新媒体运营", "跨平台内容适配"],
+        name: "内容创作",
+        items: ["摄影摄像", "脚本撰写", "采访提纲", "剪辑", "跨平台内容适配"],
       },
       {
         name: "效率与AI",
-        items: ["AI配音", "AI数字人口播", "内容批量化思维", "素材整理", "基础工作流搭建"],
+        items: ["AI配音", "AI数字人口播", "Claude code", "基础工作流搭建", "内容批量化"],
       },
     ];
 
@@ -1011,24 +1067,43 @@
 
       portfolioGrid.innerHTML = visibleItems
         .map(
-          (item) => `
+          (item) => {
+            const cover = `
+                  <div class="portfolio-cover">
+                    <div class="cover-mark sans">作品样片可单独发送或补外链</div>
+                  </div>
+                `;
+
+            const samples = item.samples.length
+              ? `
+                  <div class="sample-list">
+                    ${item.samples
+                .map(
+                  (sample) => `<span class="sample-link is-static">${sample.label}</span>`
+                )
+                .join("")}
+                  </div>
+                `
+              : `<div class="small-note">可后续补充公开视频链接或网盘链接。</div>`;
+
+            return `
               <article class="card reveal portfolio-item" data-type="${item.type}">
-                <div class="portfolio-cover">
-                  <div class="cover-mark sans">待替换真实作品封面</div>
-                </div>
+                ${cover}
                 <div class="portfolio-meta">
                   <div>
                     <div class="small-type sans">${item.type}</div>
                     <h3 style="margin-top: 6px; font-size: 1.18rem;">${item.title}</h3>
                   </div>
-                  <div class="pill sans" style="padding: 8px 12px; white-space: nowrap;">可补视频链接</div>
+                  <div class="pill sans" style="padding: 8px 12px; white-space: nowrap;">${item.samples.length ? "样片已整理" : "待补充样片"}</div>
                 </div>
                 <p class="portfolio-desc">${item.desc}</p>
                 <div class="small-note">负责环节：${item.role}</div>
                 <div class="tags">${item.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
                 <div class="highlight">${item.metric}</div>
+                ${samples}
               </article>
-            `
+            `;
+          }
         )
         .join("");
 
