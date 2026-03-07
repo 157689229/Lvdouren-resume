@@ -468,8 +468,132 @@
       text-decoration: none;
     }
 
+    .sample-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(53, 36, 21, 0.08);
+    }
+
     .sample-link.is-static {
       cursor: default;
+    }
+
+    .portfolio-cover.external-cover {
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background:
+        radial-gradient(circle at top right, rgba(255, 236, 208, 0.4), transparent 28%),
+        linear-gradient(145deg, #2f2117 0%, #6d4a27 48%, #ead3b1 100%);
+    }
+
+    .portfolio-cover.external-cover::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(255, 247, 234, 0.2);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 220px;
+      padding: 22px;
+      color: #fff6eb;
+    }
+
+    .cover-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .cover-badge,
+    .cover-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(10px);
+    }
+
+    .cover-badge {
+      background: rgba(255, 248, 238, 0.14);
+      border: 1px solid rgba(255, 248, 238, 0.22);
+    }
+
+    .cover-status {
+      background: rgba(26, 18, 13, 0.28);
+      border: 1px solid rgba(255, 248, 238, 0.16);
+      color: rgba(255, 246, 235, 0.82);
+    }
+
+    .cover-title {
+      max-width: 340px;
+    }
+
+    .cover-title strong {
+      display: block;
+      font-size: 1.3rem;
+      line-height: 1.2;
+    }
+
+    .cover-title span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 246, 235, 0.76);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
+    .cover-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cover-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 251, 245, 0.9);
+      color: #342117;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    .cover-action.is-secondary {
+      background: rgba(34, 22, 14, 0.22);
+      color: #fff6eb;
+      border: 1px solid rgba(255, 247, 234, 0.16);
+    }
+
+    .cover-action.is-placeholder {
+      background: rgba(255, 248, 238, 0.16);
+      color: rgba(255, 246, 235, 0.74);
+      border: 1px dashed rgba(255, 247, 234, 0.22);
+      cursor: default;
+    }
+
+    .cover-empty {
+      color: rgba(255, 246, 235, 0.72);
+      font-size: 0.88rem;
+      line-height: 1.7;
     }
 
     .portfolio-meta {
@@ -776,8 +900,8 @@
         </div>
 
         <div>
-          <div class="eyebrow reveal">Portfolio Preview</div>
-          <h1 class="reveal">Hey Friends</h1>
+          <div class="eyebrow reveal">Resume Portfolio</div>
+          <h1 class="reveal">任茂常</h1>
           <p class="lead sans reveal">
             我是任茂常，传播学本科出身，经历过校园影视创作、四川省广播电视台实习，以及正式岗位中的BACP品牌内容与人物采访项目。相比只做后期执行，我更擅长把前期策划、现场拍摄、后期包装和传播目标放在同一条内容逻辑里，让作品既有表达，也有结果。
           </p>
@@ -818,7 +942,7 @@
       <div class="section-head reveal">
         <div class="eyebrow">Strengths</div>
         <h2>我能补上的，不只是一个剪辑岗位。</h2>
-        <p class="sans">这页网站做成了可直接双击打开的静态版本，适合投递时发给 HR、主管或客户预览，也方便后续继续补真实作品封面与视频链接。</p>
+        <p class="sans">具备传统媒体与新媒体双线实践经验，能够将内容策划、拍摄执行、后期剪辑与传播目标整合到同一套内容表达中。</p>
       </div>
 
       <div class="strength-grid">
@@ -844,7 +968,7 @@
       <div class="section-head reveal">
         <div class="eyebrow">Portfolio</div>
         <h2>作品方向展示</h2>
-        <p class="sans">下面保留了分类筛选，并已按你当前文件夹里的视频文件名做了一轮本地配对。后续如果你给我更准确的项目说明、发布时间或平台链接，我可以再继续精修每张卡片。</p>
+        <p class="sans">围绕工作项目、实习项目与校园项目进行分类展示，便于快速了解项目类型、负责环节与阶段性能力积累。</p>
       </div>
 
       <div class="filter">
@@ -923,100 +1047,96 @@
         title: "BACP湾区宣传片",
         type: "工作项目",
         role: "选题策划 / 拍摄 / 剪辑 / 包装",
-        desc: "围绕品牌传播目标完成宣传片内容制作，从前期策划到后期包装保持统一表达，能够兼顾品牌调性、信息传递效率与成片节奏感。",
+        desc: "服务品牌传播场景的一支宣传片，从前期策划到后期包装都围绕“清楚、可信、好看”展开，画面与信息节奏保持在同一条线上。",
         tags: ["品牌内容", "宣传片", "工作项目"],
-        metric: "正式工作阶段核心代表作品",
+        metric: "品牌传播向宣传片样片",
+        storage: "建议上传至 COS 后直链展示",
         samples: [
-          { label: "BACP湾区宣传片" }
+          { label: "待填写 COS 完整版" }
         ]
       },
       {
         title: "山梓文化",
         type: "工作项目",
         role: "内容策划 / 拍摄执行 / 后期剪辑",
-        desc: "聚焦文化主题表达与品牌内容包装，在画面气质、叙事节奏和传播适配之间取得平衡，体现正式工作阶段较完整的内容执行能力。",
+        desc: "以文化气质为核心的内容项目，重点不在信息堆叠，而在氛围建立、节奏拿捏和视觉语气的统一，让内容本身先立住。",
         tags: ["品牌内容", "文化项目", "内容包装"],
-        metric: "正式工作阶段补充样片",
+        metric: "文化表达向品牌内容样片",
+        storage: "建议上传至 COS 后直链展示",
         samples: [
-          { label: "山梓文化" }
+          { label: "待填写 COS 完整版" }
         ]
       },
       {
         title: "非尝不可",
         type: "实习项目",
         role: "项目参与 / 视频制作",
-        desc: "在融媒体项目中参与视频制作与内容表达，能够根据媒体发布需求完成主题提炼、镜头组织与成片输出，体现较强的项目协作能力。",
+        desc: "融媒体项目里的内容制作实践，需要在既定选题和发布语境下完成镜头组织与成片表达，更强调配合度、完成度和整体节奏。",
         tags: ["融媒体", "实习项目", "官方发布"],
-        metric: "传统媒体项目代表作之一",
+        metric: "融媒体内容制作样片",
+        storage: "建议上传至 COS 直链展示",
         samples: [
-          {
-            label: "法国吃货寻味记（简历外链）",
-            url: "https://s.weibo.com/weibo?q=%E6%B3%95%E5%9B%BD%E5%90%83%E8%B4%A7%E5%AF%BB%E5%91%B3%E8%AE%B0"
-          }
+          { label: "待填写 COS 完整版" }
         ]
       },
       {
         title: "乡村会客厅",
         type: "实习项目",
         role: "脚本撰写 / 嘉宾联系 / 演播厅拍摄 / 后期剪辑",
-        desc: "完整参与访谈类节目从前期筹备到后期成片的制作流程，覆盖脚本、联络、拍摄与剪辑多个环节，体现较强的统筹意识与节目执行能力。",
+        desc: "一档标准访谈节目，从前期筹备到演播厅拍摄再到后期成片，环节多、配合密，做的是一整套节目流程里的稳定落地。",
         tags: ["节目制作", "演播厅拍摄", "全流程协作"],
-        metric: "具备完整的大型访谈节目参与经验",
+        metric: "访谈节目制作样片",
+        storage: "建议先压缩，再上传至 COS",
         samples: [
-          {
-            label: "节目发布链接",
-            url: "https://kscgc.scgchc.com/sctv/h5/v7/newsShare.html?id=1812096397820997633&appUserId=1798267458617843714"
-          }
+          { label: "待填写 COS 完整版" }
         ]
       },
       {
         title: "川大英才学子",
         type: "实习项目",
         role: "拍摄 / 剪辑",
-        desc: "新闻短片项目实践，按照电视媒体内容标准完成拍摄与后期剪辑，体现对新闻表达节奏、画面组织和成片规范性的把握能力。",
+        desc: "新闻短片的工作语境更直接，信息必须准、节奏必须稳、画面必须服务表达。这支样片对应的是传统媒体里相对标准的一套做法。",
         tags: ["新闻短片", "四川观察", "电视媒体"],
-        metric: "实习阶段新闻短片样片",
+        metric: "新闻短片样片",
+        storage: "建议上传至 COS 直链展示",
         samples: [
-          {
-            label: "四川观察发布页",
-            url: "https://kscgc.sctv-tf.com/sctv/h5/v7/newsShare.html?id=1801450728439545857&appUserId=80249"
-          }
+          { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E5%B7%9D%E5%A4%A7%E8%8B%B1%E6%89%8D%E5%AD%A6%E5%AD%90.mp4" }
         ]
       },
       {
         title: "双林小学",
         type: "实习项目",
         role: "拍摄 / 剪辑",
-        desc: "参与新闻短片的拍摄与剪辑工作，在有限篇幅内完成信息梳理与画面表达，体现传统媒体项目中较稳定的执行能力与成片意识。",
+        desc: "同样属于新闻短片语境，但更考验有限时长里的取舍和整理能力，片子不复杂，难的是把重点交代清楚、把节奏压得干净。",
         tags: ["新闻拍摄", "电视媒体", "成片剪辑"],
-        metric: "作品曾在四川观察平台发布",
+        metric: "电视媒体新闻短片样片",
+        storage: "建议上传至 COS 直链展示",
         samples: [
-          {
-            label: "四川观察发布页",
-            url: "https://kscgc.sctv-tf.com/sctv/h5/v7/newsShare.html?id=1802514472843673601&appUserId=1810301162199117826"
-          }
+          { label: "待填写 COS 完整版" }
         ]
       },
       {
         title: "只此青绿",
         type: "校园项目",
         role: "团队协作 / 拍摄 / 剪辑 / 视觉表达",
-        desc: "校园阶段的影像创作项目，注重画面调度、镜头语言与整体氛围的统一，体现对视觉表达和成片质感的较早积累。",
+        desc: "偏视觉表达的一支校园作品，重点放在镜头语言、画面调度和整体气质上，能看到比较早期但已经成型的审美取向。",
         tags: ["校园作品", "视觉表达", "影像剪辑"],
-        metric: "校园项目代表作之一",
+        metric: "校园视觉表达类作品",
+        storage: "建议先压缩，再上传至 COS",
         samples: [
-          { label: "只此青绿" }
+          { label: "待填写 COS 完整版" }
         ]
       },
       {
         title: "我看见了",
         type: "校园项目",
         role: "团队负责人 / 策划 / 拍摄 / 剪辑",
-        desc: "剧情向影像作品，较完整地覆盖策划、拍摄与后期剪辑流程，能够体现校园阶段在叙事表达、团队协作和项目推进上的综合能力。",
+        desc: "一支更完整的剧情向校园作品，除了影像表达本身，也能看到从策划、拍摄到后期推进的整体脉络，完成度相对更高。",
         tags: ["微电影", "校园项目", "全流程执行"],
-        metric: "校园阶段完整度较高的代表作品",
+        metric: "校园剧情向作品",
+        storage: "建议先压缩，再上传至 COS",
         samples: [
-          { label: "我看见了" }
+          { label: "待填写 COS 完整版" }
         ]
       },
     ];
@@ -1080,11 +1200,25 @@
       portfolioGrid.innerHTML = visibleItems
         .map(
           (item) => {
+            const cosSample = item.samples.find((sample) => sample.label.includes("COS"));
             const cover = `
-                  <div class="portfolio-cover">
-                    <div class="cover-mark sans">作品样片可单独发送或补外链</div>
+              <div class="portfolio-cover external-cover">
+                <div class="cover-content">
+                  <div class="cover-topline">
+                    <div class="cover-badge sans">${item.type}</div>
+                    <div class="cover-status sans">${item.storage || "建议接入外部视频源"}</div>
                   </div>
-                `;
+                  <div class="cover-title">
+                    <strong>${item.title}</strong>
+                    <span>${item.metric}</span>
+                  </div>
+                  <div class="cover-actions">
+                    ${cosSample?.url ? `<a class="cover-action sans" href="${cosSample.url}" target="_blank" rel="noopener noreferrer">前往 COS 链接</a>` : `<span class="cover-action is-placeholder sans">待填 COS 链接</span>`}
+                    ${!cosSample?.url ? `<span class="cover-empty sans">上传完成后，把 COS 链接填进作品数据即可。</span>` : ""}
+                  </div>
+                </div>
+              </div>
+            `;
 
             const samples = item.samples.length
               ? `
@@ -1098,7 +1232,7 @@
                 .join("")}
                   </div>
                 `
-              : `<div class="small-note">可后续补充公开视频链接或网盘链接。</div>`;
+              : `<div class="small-note">相关作品信息可在沟通中进一步提供。</div>`;
 
             return `
               <article class="card reveal portfolio-item" data-type="${item.type}">
@@ -1108,7 +1242,7 @@
                     <div class="small-type sans">${item.type}</div>
                     <h3 style="margin-top: 6px; font-size: 1.18rem;">${item.title}</h3>
                   </div>
-                  <div class="pill sans" style="padding: 8px 12px; white-space: nowrap;">${item.samples.length ? "样片已整理" : "待补充样片"}</div>
+                  <div class="pill sans" style="padding: 8px 12px; white-space: nowrap;">${item.samples.length ? "作品已收录" : "项目展示"}</div>
                 </div>
                 <p class="portfolio-desc">${item.desc}</p>
                 <div class="small-note">负责环节：${item.role}</div>
