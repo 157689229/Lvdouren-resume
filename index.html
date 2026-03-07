@@ -949,7 +949,10 @@
         tags: ["融媒体", "实习项目", "官方发布"],
         metric: "传统媒体项目代表作之一",
         samples: [
-          { label: "非尝不可" }
+          {
+            label: "法国吃货寻味记（简历外链）",
+            url: "https://s.weibo.com/weibo?q=%E6%B3%95%E5%9B%BD%E5%90%83%E8%B4%A7%E5%AF%BB%E5%91%B3%E8%AE%B0"
+          }
         ]
       },
       {
@@ -960,7 +963,10 @@
         tags: ["节目制作", "演播厅拍摄", "全流程协作"],
         metric: "具备完整的大型访谈节目参与经验",
         samples: [
-          { label: "乡村会客厅" }
+          {
+            label: "节目发布链接",
+            url: "https://kscgc.scgchc.com/sctv/h5/v7/newsShare.html?id=1812096397820997633&appUserId=1798267458617843714"
+          }
         ]
       },
       {
@@ -971,7 +977,10 @@
         tags: ["新闻短片", "四川观察", "电视媒体"],
         metric: "实习阶段新闻短片样片",
         samples: [
-          { label: "川大英才学子" }
+          {
+            label: "四川观察发布页",
+            url: "https://kscgc.sctv-tf.com/sctv/h5/v7/newsShare.html?id=1801450728439545857&appUserId=80249"
+          }
         ]
       },
       {
@@ -982,7 +991,10 @@
         tags: ["新闻拍摄", "电视媒体", "成片剪辑"],
         metric: "作品曾在四川观察平台发布",
         samples: [
-          { label: "双林小学" }
+          {
+            label: "四川观察发布页",
+            url: "https://kscgc.sctv-tf.com/sctv/h5/v7/newsShare.html?id=1802514472843673601&appUserId=1810301162199117826"
+          }
         ]
       },
       {
@@ -1079,7 +1091,9 @@
                   <div class="sample-list">
                     ${item.samples
                 .map(
-                  (sample) => `<span class="sample-link is-static">${sample.label}</span>`
+                  (sample) => sample.url
+                    ? `<a class="sample-link" href="${sample.url}" target="_blank" rel="noopener noreferrer">${sample.label}</a>`
+                    : `<span class="sample-link is-static">${sample.label}</span>`
                 )
                 .join("")}
                   </div>
