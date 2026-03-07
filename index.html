@@ -487,6 +487,40 @@
         linear-gradient(145deg, #2f2117 0%, #6d4a27 48%, #ead3b1 100%);
     }
 
+    .portfolio-cover.video-cover {
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+      padding: 0;
+      background: #1d1713;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    .portfolio-cover.video-cover video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1d1713;
+    }
+
+    .video-status {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(26, 18, 13, 0.55);
+      border: 1px solid rgba(255, 248, 238, 0.16);
+      color: rgba(255, 246, 235, 0.92);
+      backdrop-filter: blur(10px);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+
     .portfolio-cover.external-cover::before {
       content: "";
       position: absolute;
@@ -1201,24 +1235,33 @@
         .map(
           (item) => {
             const cosSample = item.samples.find((sample) => sample.label.includes("COS"));
-            const cover = `
-              <div class="portfolio-cover external-cover">
-                <div class="cover-content">
-                  <div class="cover-topline">
-                    <div class="cover-badge sans">${item.type}</div>
-                    <div class="cover-status sans">${item.storage || "建议接入外部视频源"}</div>
+            const cover = cosSample?.url
+              ? `
+                  <div class="portfolio-cover video-cover">
+                    <div class="video-status sans">${item.storage || "COS 直链展示"}</div>
+                    <video controls preload="metadata" playsinline>
+                      <source src="${cosSample.url}" type="video/mp4" />
+                    </video>
                   </div>
-                  <div class="cover-title">
-                    <strong>${item.title}</strong>
-                    <span>${item.metric}</span>
+                `
+              : `
+                  <div class="portfolio-cover external-cover">
+                    <div class="cover-content">
+                      <div class="cover-topline">
+                        <div class="cover-badge sans">${item.type}</div>
+                        <div class="cover-status sans">${item.storage || "建议接入外部视频源"}</div>
+                      </div>
+                      <div class="cover-title">
+                        <strong>${item.title}</strong>
+                        <span>${item.metric}</span>
+                      </div>
+                      <div class="cover-actions">
+                        <span class="cover-action is-placeholder sans">待填 COS 链接</span>
+                        <span class="cover-empty sans">上传完成后，把 COS 链接填进作品数据即可。</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="cover-actions">
-                    ${cosSample?.url ? `<a class="cover-action sans" href="${cosSample.url}" target="_blank" rel="noopener noreferrer">前往 COS 链接</a>` : `<span class="cover-action is-placeholder sans">待填 COS 链接</span>`}
-                    ${!cosSample?.url ? `<span class="cover-empty sans">上传完成后，把 COS 链接填进作品数据即可。</span>` : ""}
-                  </div>
-                </div>
-              </div>
-            `;
+                `;
 
             const samples = item.samples.length
               ? `
