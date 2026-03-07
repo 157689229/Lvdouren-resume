@@ -550,8 +550,7 @@
       flex-wrap: wrap;
     }
 
-    .cover-badge,
-    .cover-status {
+    .cover-badge {
       display: inline-flex;
       align-items: center;
       min-height: 32px;
@@ -562,15 +561,8 @@
       backdrop-filter: blur(10px);
     }
 
-    .cover-badge {
-      background: rgba(255, 248, 238, 0.14);
-      border: 1px solid rgba(255, 248, 238, 0.22);
-    }
-
-    .cover-status {
       background: rgba(26, 18, 13, 0.28);
       border: 1px solid rgba(255, 248, 238, 0.16);
-      color: rgba(255, 246, 235, 0.82);
     }
 
     .cover-title {
@@ -1084,7 +1076,6 @@
         desc: "服务品牌传播场景的一支宣传片，从前期策划到后期包装都围绕“清楚、可信、好看”展开，画面与信息节奏保持在同一条线上。",
         tags: ["品牌内容", "宣传片", "工作项目"],
         metric: "品牌传播向宣传片样片",
-        storage: "建议上传至 COS 后直链展示",
         samples: [
           { label: "待填写 COS 完整版" }
         ]
@@ -1096,7 +1087,6 @@
         desc: "以文化气质为核心的内容项目，重点不在信息堆叠，而在氛围建立、节奏拿捏和视觉语气的统一，让内容本身先立住。",
         tags: ["品牌内容", "文化项目", "内容包装"],
         metric: "文化表达向品牌内容样片",
-        storage: "建议上传至 COS 后直链展示",
         samples: [
           { label: "待填写 COS 完整版" }
         ]
@@ -1108,7 +1098,6 @@
         desc: "融媒体项目里的内容制作实践，需要在既定选题和发布语境下完成镜头组织与成片表达，更强调配合度、完成度和整体节奏。",
         tags: ["融媒体", "实习项目", "官方发布"],
         metric: "融媒体内容制作样片",
-        storage: "建议上传至 COS 直链展示",
         samples: [
           { label: "待填写 COS 完整版" }
         ]
@@ -1120,7 +1109,6 @@
         desc: "一档标准访谈节目，从前期筹备到演播厅拍摄再到后期成片，环节多、配合密，做的是一整套节目流程里的稳定落地。",
         tags: ["节目制作", "演播厅拍摄", "全流程协作"],
         metric: "访谈节目制作样片",
-        storage: "建议先压缩，再上传至 COS",
         samples: [
           { label: "待填写 COS 完整版" }
         ]
@@ -1132,7 +1120,6 @@
         desc: "新闻短片的工作语境更直接，信息必须准、节奏必须稳、画面必须服务表达。这支样片对应的是传统媒体里相对标准的一套做法。",
         tags: ["新闻短片", "四川观察", "电视媒体"],
         metric: "新闻短片样片",
-        storage: "建议上传至 COS 直链展示",
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E5%B7%9D%E5%A4%A7%E8%8B%B1%E6%89%8D%E5%AD%A6%E5%AD%90.mp4" }
         ]
@@ -1144,7 +1131,6 @@
         desc: "同样属于新闻短片语境，但更考验有限时长里的取舍和整理能力，片子不复杂，难的是把重点交代清楚、把节奏压得干净。",
         tags: ["新闻拍摄", "电视媒体", "成片剪辑"],
         metric: "电视媒体新闻短片样片",
-        storage: "建议上传至 COS 直链展示",
         samples: [
           { label: "待填写 COS 完整版" }
         ]
@@ -1156,7 +1142,6 @@
         desc: "偏视觉表达的一支校园作品，重点放在镜头语言、画面调度和整体气质上，能看到比较早期但已经成型的审美取向。",
         tags: ["校园作品", "视觉表达", "影像剪辑"],
         metric: "校园视觉表达类作品",
-        storage: "建议先压缩，再上传至 COS",
         samples: [
           { label: "待填写 COS 完整版" }
         ]
@@ -1168,7 +1153,6 @@
         desc: "一支更完整的剧情向校园作品，除了影像表达本身，也能看到从策划、拍摄到后期推进的整体脉络，完成度相对更高。",
         tags: ["微电影", "校园项目", "全流程执行"],
         metric: "校园剧情向作品",
-        storage: "建议先压缩，再上传至 COS",
         samples: [
           { label: "待填写 COS 完整版" }
         ]
@@ -1238,7 +1222,7 @@
             const cover = cosSample?.url
               ? `
                   <div class="portfolio-cover video-cover">
-                    <div class="video-status sans">${item.storage || "COS 直链展示"}</div>
+                    <div class="video-status sans">作品播放</div>
                     <video controls preload="metadata" playsinline>
                       <source src="${cosSample.url}" type="video/mp4" />
                     </video>
@@ -1249,7 +1233,6 @@
                     <div class="cover-content">
                       <div class="cover-topline">
                         <div class="cover-badge sans">${item.type}</div>
-                        <div class="cover-status sans">${item.storage || "建议接入外部视频源"}</div>
                       </div>
                       <div class="cover-title">
                         <strong>${item.title}</strong>
