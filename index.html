@@ -1263,19 +1263,21 @@
                   </div>
                 `;
 
-            const samples = item.samples.length
-              ? `
-                  <div class="sample-list">
-                    ${item.samples
-                .map(
-                  (sample) => sample.url
-                    ? `<a class="sample-link" href="${sample.url}" target="_blank" rel="noopener noreferrer">${sample.label}</a>`
-                    : `<span class="sample-link is-static">${sample.label}</span>`
-                )
-                .join("")}
-                  </div>
-                `
-              : `<div class="small-note">相关作品信息可在沟通中进一步提供。</div>`;
+            const samples = cosSample?.url
+              ? ""
+              : item.samples.length
+                ? `
+                    <div class="sample-list">
+                      ${item.samples
+                  .map(
+                    (sample) => sample.url
+                      ? `<a class="sample-link" href="${sample.url}" target="_blank" rel="noopener noreferrer">${sample.label}</a>`
+                      : `<span class="sample-link is-static">${sample.label}</span>`
+                  )
+                  .join("")}
+                    </div>
+                  `
+                : `<div class="small-note">相关作品信息可在沟通中进一步提供。</div>`;
 
             return `
               <article class="card reveal portfolio-item" data-type="${item.type}">
