@@ -224,6 +224,22 @@
       line-height: 1.05;
     }
 
+    .hero-role {
+      margin-top: 14px;
+      color: var(--accent-strong);
+      font-size: clamp(1.35rem, 2.8vw, 2.3rem);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      margin-top: 16px;
+      max-width: 760px;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
     .lead {
       margin-top: 18px;
       max-width: 740px;
@@ -302,17 +318,19 @@
       border: 1px solid var(--line);
       background: rgba(255, 253, 249, 0.9);
       box-shadow: 0 12px 30px rgba(53, 36, 21, 0.05);
-      text-align: center;
+      text-align: left;
     }
 
     .metric-value {
-      font-size: 2rem;
+      font-size: 1.22rem;
+      font-weight: 700;
     }
 
     .metric-label {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 0.88rem;
+      margin-top: 10px;
+      color: var(--sub);
+      font-size: 0.9rem;
+      line-height: 1.72;
     }
 
     section {
@@ -559,8 +577,6 @@
       font-size: 0.8rem;
       letter-spacing: 0.04em;
       backdrop-filter: blur(10px);
-    }
-
       background: rgba(26, 18, 13, 0.28);
       border: 1px solid rgba(255, 248, 238, 0.16);
     }
@@ -749,7 +765,7 @@
     }
 
     .skills-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .skill-card h3 {
@@ -901,10 +917,10 @@
     <div class="shell topbar-inner">
       <div class="brand">
         <strong>任茂常</strong>
-        <span class="sans">Video Editor · Content Creator</span>
+        <span class="sans">Video Editing · Brand Content</span>
       </div>
       <nav class="topnav sans">
-        <a href="#portfolio">作品集</a>
+        <a href="#portfolio">代表作</a>
         <a href="#experience">经历</a>
         <a href="#skills">技能</a>
         <a href="#contact">联系</a>
@@ -919,26 +935,30 @@
           <div class="portrait">
             <img src="简历照片.JPG" alt="任茂常简历照片" />
             <div class="portrait-badge sans">
-              <strong>内容逻辑驱动型视频创作者</strong>
-              <span>脚本、拍摄、剪辑、包装、平台表达</span>
+              <strong>视频编辑 / 品牌内容执行</strong>
+              <span>脚本、采访、拍摄、剪辑、包装</span>
             </div>
           </div>
         </div>
 
         <div>
-          <div class="eyebrow reveal">Resume Portfolio</div>
+          <div class="eyebrow reveal">Resume</div>
           <h1 class="reveal">任茂常</h1>
+          <h2 class="hero-role sans reveal">视频编辑 / 品牌内容执行</h2>
+          <p class="hero-subtitle sans reveal">
+            可独立参与脚本、采访、拍摄、剪辑与包装，偏人物内容、品牌内容、新媒体视频。
+          </p>
           <p class="lead sans reveal">
-            我是任茂常，传播学本科出身，经历过校园影视创作、四川省广播电视台实习，以及正式岗位中的BACP品牌内容与人物采访项目。相比只做后期执行，我更擅长把前期策划、现场拍摄、后期包装和传播目标放在同一条内容逻辑里，让作品既有表达，也有结果。
+            我是任茂常，传播学本科出身，做过校园影视创作、四川省广播电视台实习，以及品牌内容与人物采访项目。相比只做后期执行，我更适合需要内容理解、执行效率和成片表达都在线的综合型视频岗位。
           </p>
 
           <div class="hero-actions reveal">
-            <a class="button-primary sans" href="#portfolio">查看作品方向</a>
+            <a class="button-primary sans" href="#portfolio">查看代表作</a>
             <a class="button-secondary sans" href="mailto:157689229@qq.com">联系我</a>
             <div class="contact-inline">
-              <div class="pill">邮箱 · 157689229@qq.com</div>
-              <div class="pill">电话 · 17354485109</div>
-              <div class="pill">城市 · 广东东莞 / 深圳</div>
+              <div class="pill">邮箱：157689229@qq.com</div>
+              <div class="pill">电话：17354485109</div>
+              <div class="pill">城市：广东东莞 / 深圳</div>
             </div>
           </div>
         </div>
@@ -947,45 +967,45 @@
 
     <section class="metrics">
       <article class="metric reveal">
-        <div class="metric-value">8万+</div>
-        <div class="metric-label">企鹅号粉丝</div>
+        <div class="metric-value">脚本策划</div>
+        <div class="metric-label">能理解内容目标，能把想法落成可执行提纲</div>
       </article>
       <article class="metric reveal">
-        <div class="metric-value">1600万+</div>
-        <div class="metric-label">视频总播放量</div>
+        <div class="metric-value">采访提纲</div>
+        <div class="metric-label">能提前整理问题逻辑，控制人物表达方向</div>
       </article>
       <article class="metric reveal">
-        <div class="metric-value">36万</div>
-        <div class="metric-label">抖音单条最高</div>
+        <div class="metric-value">拍摄执行</div>
+        <div class="metric-label">能根据内容类型完成基础拍摄与现场配合</div>
       </article>
       <article class="metric reveal">
-        <div class="metric-value">5万</div>
-        <div class="metric-label">B站单条最高</div>
+        <div class="metric-value">后期包装</div>
+        <div class="metric-label">能完成剪辑、字幕、节奏整理与成片输出</div>
       </article>
     </section>
 
     <section>
       <div class="section-head reveal">
         <div class="eyebrow">Strengths</div>
-        <h2>我能补上的，不只是一个剪辑岗位。</h2>
-        <p class="sans">具备传统媒体与新媒体双线实践经验，能够将内容策划、拍摄执行、后期剪辑与传播目标整合到同一套内容表达中。</p>
+        <h2>我能补上的，不只是一个后期执行位</h2>
+        <p class="sans">我更适合需要“理解内容目标 + 能落地执行”的视频岗位，而不只是按需求机械剪片。</p>
       </div>
 
       <div class="strength-grid">
         <article class="card reveal">
           <div class="icon-chip">影</div>
-          <h3>传统媒体 + 新媒体双线经验</h3>
-          <p>做过电视台实习、新闻短片、访谈节目、融媒体项目，也做过自媒体账号和企业短视频内容，能适应不同语境下的内容表达方式。</p>
+          <h3>不只是会剪</h3>
+          <p>能参与前期策划、采访提纲、现场拍摄和后期包装，适合节奏快、分工没那么细的内容团队。</p>
         </article>
         <article class="card reveal">
-          <div class="icon-chip">剪</div>
-          <h3>能写能拍能剪</h3>
-          <p>不仅会后期，也能参与脚本撰写、采访提纲、拍摄执行和成片包装，适合综合型视频岗位和节奏较快的内容团队。</p>
+          <div class="icon-chip">访</div>
+          <h3>有人物和品牌内容经验</h3>
+          <p>做过校园影视、电视台实习、品牌内容与人物采访项目，知道不同场景下该怎么控制表达、节奏和信息量。</p>
         </article>
         <article class="card reveal">
           <div class="icon-chip">传</div>
-          <h3>懂内容目标和传播场景</h3>
-          <p>会把剪辑放进项目表达、平台分发和品牌内容里思考，让作品既服务业务，也照顾观众的理解成本。</p>
+          <h3>会站在传播结果上做内容</h3>
+          <p>不只关心片子剪完没有，也会考虑内容给谁看、解决什么问题、怎么更容易被看懂。</p>
         </article>
       </div>
     </section>
@@ -993,15 +1013,15 @@
     <section id="portfolio">
       <div class="section-head reveal">
         <div class="eyebrow">Portfolio</div>
-        <h2>作品方向展示</h2>
-        <p class="sans">围绕工作项目、实习项目与校园项目进行分类展示，便于快速了解项目类型、负责环节与阶段性能力积累。</p>
+        <h2>代表作品</h2>
+        <p class="sans">这里只放最能代表我当前岗位能力的作品。重点不是数量，而是我在真实项目里负责了什么、解决了什么、最后做成了什么。</p>
       </div>
 
       <div class="filter">
         <button class="active" data-filter="全部">全部</button>
-        <button data-filter="工作项目">工作项目</button>
+        <button data-filter="品牌内容">品牌内容</button>
         <button data-filter="实习项目">实习项目</button>
-        <button data-filter="校园项目">校园项目</button>
+        <button data-filter="校园作品">校园作品</button>
       </div>
 
       <div class="portfolio-grid" id="portfolio-grid"></div>
@@ -1011,7 +1031,7 @@
       <div class="section-head reveal">
         <div class="eyebrow">Experience</div>
         <h2>经历概览</h2>
-        <p class="sans">把校园积累、实习经验、正式岗位和个人账号运营并列排开，能更清楚地说明你的成长路径和岗位适配度。</p>
+        <p class="sans">我把和目标岗位最相关的经历放在前面：正式项目经验、实习经验、校园创作。重点不是讲成长故事，而是说明我已经在什么场景里做过真实内容。</p>
       </div>
 
       <div class="timeline" id="timeline"></div>
@@ -1021,28 +1041,21 @@
       <div class="section-head reveal">
         <div class="eyebrow">Skills</div>
         <h2>技能结构</h2>
-        <p class="sans">软件能力、内容执行和 AI 辅助能力拆开呈现，更符合内容岗位查看简历时的阅读方式。</p>
+        <p class="sans">我不只会软件本身，更重要的是知道这些能力该怎么用在具体内容里。</p>
       </div>
 
       <div class="skills-grid" id="skills-grid"></div>
 
       <div class="dual-grid">
         <article class="card reveal">
-          <div class="eyebrow">Why Me</div>
-          <h3 style="margin-top: 10px; font-size: 1.4rem;">我适合什么团队</h3>
-          <p>更适合品牌内容团队、新媒体部门、宣传部门、老板 IP 团队和中小型内容团队。因为这类岗位需要的不是单点剪辑，而是对内容目标、执行效率、沟通协作和项目表达的综合把控。</p>
+          <div class="eyebrow">Position Fit</div>
+          <h3 style="margin-top: 10px; font-size: 1.4rem;">适合的岗位</h3>
+          <p>我更适合品牌内容视频编辑、新媒体视频执行、人物采访或纪实向内容岗位。对只需要纯后期流水执行的岗位，我不是最有优势；对需要从内容理解到成片落地都能补位的团队，我更合适。</p>
         </article>
         <article class="card reveal">
-          <div class="eyebrow">Feedback</div>
-          <h3 style="margin-top: 10px; font-size: 1.4rem;">协作印象</h3>
-          <div class="quote">
-            <div class="quote-text">“优势不只是会剪片，而是具备内容理解、项目协作和多平台表达能力。”</div>
-            <div class="quote-name sans">岗位匹配总结</div>
-          </div>
-          <div class="quote">
-            <div class="quote-text">“既有校园阶段的作品积累，也已经有正式岗位中的真实业务内容经验。”</div>
-            <div class="quote-name sans">网站定位总结</div>
-          </div>
+          <div class="eyebrow">Work Style</div>
+          <h3 style="margin-top: 10px; font-size: 1.4rem;">合作方式</h3>
+          <p>我更适合目标明确、节奏快、愿意一起讨论内容方向的团队。能接得住反馈，也能把比较抽象的需求往可执行、可交付的成片上落。</p>
         </article>
       </div>
     </section>
@@ -1052,11 +1065,11 @@
         <div class="cta-grid">
           <div>
             <div class="eyebrow" style="color: #e5b46e;">Next Step</div>
-            <h2 style="margin-top: 10px;">期待加入更有内容判断力的团队</h2>
-            <p>如果你的团队正在寻找兼具内容理解、拍摄执行、后期剪辑与传播意识的视频创作者，欢迎进一步沟通。期待参与更多有表达价值、也有实际结果的内容项目。</p>
+            <h2 style="margin-top: 10px;">正在寻找更成熟的视频内容岗位</h2>
+            <p>目前求职方向为深圳 / 东莞的视频编辑、品牌内容和新媒体内容岗位。如果你的团队需要一个能参与脚本、拍摄、剪辑与包装的一体化执行型内容人员，欢迎联系我查看代表作品。</p>
           </div>
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a class="button-primary sans" href="#portfolio">继续看作品</a>
+            <a class="button-primary sans" href="#portfolio">查看代表作</a>
             <a class="button-secondary sans" href="mailto:157689229@qq.com"
               style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); color: #fdf4e4;">发邮件</a>
           </div>
@@ -1065,28 +1078,30 @@
     </section>
   </main>
 
-  <footer class="sans">© 2026 任茂常 · 用内容逻辑做好每一条视频</footer>
+  <footer class="sans">© 2026 任茂常 · 视频编辑 / 品牌内容执行</footer>
 
   <script>
     const portfolioItems = [
       {
         title: "BACP湾区宣传片",
-        type: "工作项目",
-        role: "选题策划 / 拍摄 / 剪辑 / 包装",
-        desc: "服务品牌传播场景的一支宣传片，从前期策划到后期包装都围绕“清楚、可信、好看”展开，画面与信息节奏保持在同一条线上。",
-        tags: ["品牌内容", "宣传片", "工作项目"],
-        metric: "品牌传播向宣传片样片",
+        type: "品牌内容",
+        goal: "让观众快速理解品牌信息、人物表达和内容重点。",
+        role: "采访提纲 / 拍摄配合 / 后期剪辑 / 字幕与包装",
+        action: "把原本分散的信息整理成更清楚的表达结构，让品牌内容在有限时长里更容易被看懂。",
+        takeaway: "这类项目让我更清楚，视频不只是剪顺，而是要把信息和情绪都剪出来。",
+        tags: ["品牌内容", "人物采访", "后期包装"],
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/BACP%E6%B9%BE%E5%8C%BA%E5%AE%A3%E4%BC%A0%E7%89%87.mp4" }
         ]
       },
       {
         title: "山梓文化",
-        type: "工作项目",
-        role: "内容策划 / 拍摄执行 / 后期剪辑",
-        desc: "以文化气质为核心的内容项目，重点不在信息堆叠，而在氛围建立、节奏拿捏和视觉语气的统一，让内容本身先立住。",
-        tags: ["品牌内容", "文化项目", "内容包装"],
-        metric: "文化表达向品牌内容样片",
+        type: "品牌内容",
+        goal: "让观众快速理解人物信息与内容重点，同时保留项目本身的气质。",
+        role: "采访提纲 / 拍摄执行 / 后期剪辑 / 节奏包装",
+        action: "把采访和画面里的关键信息重新整理，让表达结构更集中，成片节奏更稳。",
+        takeaway: "品牌内容越偏表达型，越需要先想清楚信息顺序，再决定镜头和节奏怎么落。",
+        tags: ["品牌内容", "人物内容", "内容包装"],
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E5%B1%B1%E6%A2%93%E6%96%87%E5%8C%96.mp4" }
         ]
@@ -1094,10 +1109,11 @@
       {
         title: "非尝不可",
         type: "实习项目",
-        role: "项目参与 / 视频制作",
-        desc: "融媒体项目里的内容制作实践，需要在既定选题和发布语境下完成镜头组织与成片表达，更强调配合度、完成度和整体节奏。",
-        tags: ["融媒体", "实习项目", "官方发布"],
-        metric: "融媒体内容制作样片",
+        goal: "在有限时间内完成内容采集、整理和剪辑输出。",
+        role: "素材整理 / 拍摄协助 / 基础剪辑 / 内容配合",
+        action: "在更强调效率和规范的环境里完成内容执行，兼顾信息完整度、镜头节奏和成片交付。",
+        takeaway: "让我不只会做内容，也更知道团队协作和交付标准是什么。",
+        tags: ["融媒体内容", "实习项目", "内容执行"],
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E9%9D%9E%E5%B0%9D%E4%B8%8D%E5%8F%AF.mp4" }
         ]
@@ -1105,10 +1121,11 @@
       {
         title: "乡村会客厅",
         type: "实习项目",
-        role: "脚本撰写 / 嘉宾联系 / 演播厅拍摄 / 后期剪辑",
-        desc: "一档标准访谈节目，从前期筹备到演播厅拍摄再到后期成片，环节多、配合密，做的是一整套节目流程里的稳定落地。",
-        tags: ["节目制作", "演播厅拍摄", "全流程协作"],
-        metric: "访谈节目制作样片",
+        goal: "在节目流程内完成内容准备、现场执行和后期输出。",
+        role: "脚本整理 / 嘉宾联系 / 演播厅拍摄 / 后期剪辑",
+        action: "把访谈节目的前期筹备、现场配合和后期梳理接起来，让节目表达更完整、交付更稳定。",
+        takeaway: "这段项目经历让我更清楚，访谈内容最难的不是素材多少，而是怎么把信息组织得更顺。",
+        tags: ["访谈节目", "演播厅拍摄", "全流程协作"],
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E4%B9%A1%E6%9D%91%E4%BC%9A%E5%AE%A2%E5%8E%85.mp4" }
         ]
@@ -1116,10 +1133,11 @@
       {
         title: "川大英才学子",
         type: "实习项目",
-        role: "拍摄 / 剪辑",
-        desc: "新闻短片的工作语境更直接，信息必须准、节奏必须稳、画面必须服务表达。这支样片对应的是传统媒体里相对标准的一套做法。",
-        tags: ["新闻短片", "四川观察", "电视媒体"],
-        metric: "新闻短片样片",
+        goal: "在有限时间内完成内容采集、整理和新闻短片输出。",
+        role: "拍摄协助 / 素材整理 / 基础剪辑",
+        action: "在更强调效率和规范的环境里完成内容执行，保证信息准确、节奏清楚、表达不过度。",
+        takeaway: "让我更理解新闻短片对协作效率、表达克制和交付标准的要求。",
+        tags: ["新闻短片", "电视台实习", "基础剪辑"],
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E5%B7%9D%E5%A4%A7%E8%8B%B1%E6%89%8D%E5%AD%A6%E5%AD%90.mp4" }
         ]
@@ -1127,32 +1145,35 @@
       {
         title: "双林小学",
         type: "实习项目",
-        role: "拍摄 / 剪辑",
-        desc: "同样属于新闻短片语境，但更考验有限时长里的取舍和整理能力，片子不复杂，难的是把重点交代清楚、把节奏压得干净。",
-        tags: ["新闻拍摄", "电视媒体", "成片剪辑"],
-        metric: "电视媒体新闻短片样片",
+        goal: "在有限时长里完成新闻内容整理与成片输出。",
+        role: "素材整理 / 拍摄协助 / 基础剪辑 / 内容配合",
+        action: "把有限素材里的重点信息挑出来，尽量让画面和表达都服务新闻本身，而不是只追求形式。",
+        takeaway: "这类项目让我更知道，短片越短，信息取舍和节奏控制就越重要。",
+        tags: ["新闻短片", "电视台实习", "成片剪辑"],
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E5%8F%8C%E6%9E%97%E5%B0%8F%E5%AD%A6.mp4" }
         ]
       },
       {
         title: "只此青绿",
-        type: "校园项目",
-        role: "团队协作 / 拍摄 / 剪辑 / 视觉表达",
-        desc: "偏视觉表达的一支校园作品，重点放在镜头语言、画面调度和整体气质上，能看到比较早期但已经成型的审美取向。",
-        tags: ["校园作品", "视觉表达", "影像剪辑"],
-        metric: "校园视觉表达类作品",
+        type: "校园作品",
+        goal: "完成完整内容表达，并把视觉调度和画面气质做出来。",
+        role: "前期策划 / 团队协作 / 拍摄执行 / 后期剪辑",
+        action: "深度参与一条内容从想法到成片的完整过程，把镜头语言、画面调度和后期节奏连在一起。",
+        takeaway: "这类作品更能体现我的基础能力，也说明我不是只会接后期素材的人。",
+        tags: ["校园影视", "视觉表达", "完整流程"],
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E5%8F%AA%E6%AD%A4%E9%9D%92%E7%BB%BF.mp4" }
         ]
       },
       {
         title: "我看见了",
-        type: "校园项目",
-        role: "团队负责人 / 策划 / 拍摄 / 剪辑",
-        desc: "一支更完整的剧情向校园作品，除了影像表达本身，也能看到从策划、拍摄到后期推进的整体脉络，完成度相对更高。",
-        tags: ["微电影", "校园项目", "全流程执行"],
-        metric: "校园剧情向作品",
+        type: "校园作品",
+        goal: "完成一条从策划到成片都完整闭环的剧情向内容表达。",
+        role: "前期策划 / 拍摄执行 / 后期剪辑 / 项目推进",
+        action: "独立或深度参与一条内容从想法到成片的完整过程，把前期组织、拍摄执行和后期表达串起来。",
+        takeaway: "校园阶段的完整创作经历，让我在进入真实项目之前就建立了内容结构和成片意识。",
+        tags: ["校园影视", "剧情创作", "全流程执行"],
         samples: [
           { label: "COS 完整版", url: "https://lvdouren-video-1409063132.cos.ap-guangzhou.myqcloud.com/%E6%88%91%E7%9C%8B%E8%A7%81%E4%BA%86.mp4" }
         ]
@@ -1162,46 +1183,39 @@
     const timeline = [
       {
         period: "2025.07 - 至今",
-        title: "新媒体运营 / 内容策划 / 拍摄剪辑",
-        company: "粤贸全球湾区优品展贸中心",
-        desc: "负责湾区优品相关内容的视频策划、采访提纲、拍摄执行、后期剪辑、字幕包装和 AI 辅助内容生产，覆盖人物采访、品牌表达、供应链与垂类短视频等方向。",
+        title: "BACP 品牌内容项目",
+        company: "视频内容执行 / 剪辑相关工作",
+        desc: "参与品牌内容与人物采访类项目，负责或协助内容整理、拍摄执行、后期剪辑与成片包装。相比单纯后期，我更关注内容逻辑、表达顺序和成片是否真的服务项目目标。",
       },
       {
         period: "2024",
-        title: "四川省广播电视台实习",
-        company: "传统媒体项目实践",
-        desc: "参与新闻短片、融媒体内容和访谈节目制作，接触电视媒体标准化制作流程，完成拍摄、脚本、联络和后期等多环节工作。",
+        title: "四川省广播电视台",
+        company: "实习",
+        desc: "接触新闻短片、访谈节目或融媒体内容的基础流程，参与素材整理、拍摄配合与后期相关工作。这段经历让我对内容生产的效率、规范和团队协作有了更真实的理解。",
       },
       {
         period: "2021.09 - 2025.06",
-        title: "武汉文理学院 传播学本科",
-        company: "校园影视项目与课程训练",
-        desc: "系统学习摄影摄像、新媒体运营、影视后期特效与合成等课程，在校期间持续参与专题片、微电影、MV、广告短片等项目制作。",
-      },
-      {
-        period: "在校期间",
-        title: "个人自媒体内容创作",
-        company: "多平台账号运营实践",
-        desc: "积累娱乐、摄影干货、热点分析等内容经验，形成从选题、脚本到剪辑发布的一体化能力，具备较强的平台感知和执行力。",
+        title: "校园影视创作",
+        company: "项目实践",
+        desc: "在校园阶段持续参与视频创作，完成过前期策划、拍摄执行与后期剪辑，建立了我对视频表达和内容结构的基础理解。",
       },
     ];
 
     const skillGroups = [
       {
-        name: "后期软件",
-        items: ["Premiere Pro", "Final Cut Pro", "剪映专业版", "Photoshop"],
+        name: "软件工具",
+        summary: "PR / AE / PS / 剪映。能完成常规剪辑、字幕整理、基础包装、画面节奏调整和简单视觉处理。",
+        items: ["PR", "AE", "PS", "剪映"],
       },
       {
-        name: "设计与辅助",
-        items: ["Nano-banana", "即梦", "WPS", "醒图"]
+        name: "内容执行",
+        summary: "脚本整理 / 采访提纲 / 拍摄执行 / 素材整理 / 节奏包装。能把前期想法和后期成片连起来，不是只接素材做机械处理。",
+        items: ["脚本整理", "采访提纲", "拍摄执行", "素材整理", "节奏包装"],
       },
       {
-        name: "内容创作",
-        items: ["摄影摄像", "脚本撰写", "采访提纲", "剪辑", "跨平台内容适配"],
-      },
-      {
-        name: "效率与AI",
-        items: ["AI配音", "AI数字人口播", "Claude code", "基础工作流搭建", "内容批量化"],
+        name: "AI 辅助",
+        summary: "提纲整理 / 标题备选 / 字幕校对 / 文案润色 / 资料整理。把 AI 当提效工具，不是替代判断。能提升前期整理和后期收尾效率。",
+        items: ["提纲整理", "标题备选", "字幕校对", "文案润色", "资料整理"],
       },
     ];
 
@@ -1222,7 +1236,7 @@
             const cover = cosSample?.url
               ? `
                   <div class="portfolio-cover video-cover">
-                    <div class="video-status sans">作品播放</div>
+                    <div class="video-status sans">代表作品</div>
                     <video controls preload="metadata" playsinline>
                       <source src="${cosSample.url}" type="video/mp4" />
                     </video>
@@ -1236,7 +1250,7 @@
                       </div>
                       <div class="cover-title">
                         <strong>${item.title}</strong>
-                        <span>${item.metric}</span>
+                        <span>${item.goal}</span>
                       </div>
                       <div class="cover-actions">
                         <span class="cover-action is-placeholder sans">待填 COS 链接</span>
@@ -1270,12 +1284,13 @@
                     <div class="small-type sans">${item.type}</div>
                     <h3 style="margin-top: 6px; font-size: 1.18rem;">${item.title}</h3>
                   </div>
-                  <div class="pill sans" style="padding: 8px 12px; white-space: nowrap;">${item.samples.length ? "作品已收录" : "项目展示"}</div>
+                  <div class="pill sans" style="padding: 8px 12px; white-space: nowrap;">${cosSample?.url ? "代表作品" : "项目说明"}</div>
                 </div>
-                <p class="portfolio-desc">${item.desc}</p>
-                <div class="small-note">负责环节：${item.role}</div>
+                <p class="portfolio-desc"><strong>项目目标：</strong>${item.goal}</p>
+                <div class="small-note"><strong>我的职责：</strong>${item.role}</div>
+                <div class="small-note"><strong>我做的事：</strong>${item.action}</div>
                 <div class="tags">${item.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
-                <div class="highlight">${item.metric}</div>
+                <div class="highlight"><strong>项目收获：</strong>${item.takeaway}</div>
                 ${samples}
               </article>
             `;
@@ -1309,6 +1324,7 @@
         (group) => `
             <article class="card skill-card reveal">
               <h3>${group.name}</h3>
+              <p>${group.summary}</p>
               <div class="skill-list">
                 ${group.items.map((item) => `<span>${item}</span>`).join("")}
               </div>
