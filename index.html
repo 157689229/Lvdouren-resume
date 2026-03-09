@@ -524,6 +524,7 @@
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #1d1713;
+      object-fit: cover;
     }
 
     .video-status {
@@ -1121,6 +1122,7 @@
       {
         title: "BACP湾区宣传片",
         type: "企业宣传片",
+        poster: "assets/posters/BACP湾区宣传片.mp4.png",
         goal: "介绍的BACP粤贸全球湾区优品的项目信息、把握剪辑节奏、内容重点。",
         role: "后期剪辑 / Ai配音/ 字幕与包装",
         action: "完成剪辑后，再用AI配音、字幕和基础包装把内容重点提出来，让成片更完整。",
@@ -1133,6 +1135,7 @@
       {
         title: "山梓文化",
         type: "宣传短片",
+        poster: "assets/posters/山梓文化.mp4.png",
         goal: "展示山梓文化潮玩产品，同时适应短视频平台传播逻辑，独立成片。",
         role: "采访提纲 / 拍摄执行 / 后期剪辑 / 包装",
         action: "采访重点和表达顺序理清，拍摄取到关键画面，后期把信息和节奏剪辑得更清楚。",
@@ -1145,6 +1148,7 @@
       {
         title: "非尝不可",
         type: "实习项目",
+        poster: "assets/posters/非尝不可.mp4.png",
         goal: "中法建交60周年的大背景下，完成内容素材采集、整理和输出。",
         role: "素材整理 / 拍摄协助 / 内容配合",
         action: "把素材和关键信息梳理清楚，配合视频制作和成片整理，让内容更符合官方发布标准。",
@@ -1157,6 +1161,7 @@
       {
         title: "乡村会客厅",
         type: "实习项目",
+        poster: "assets/posters/乡村会客厅.mp4.png",
         goal: "熟悉大型综合演播厅的整体创作流程，完成节目内容准备、现场执行和后期输出。",
         role: "脚本/ 嘉宾/演播厅拍摄 / 后期剪辑",
         action: "访谈提纲和嘉宾沟通内容，配合演播厅拍摄，把对话内容剪成信息清楚、节奏稳定的节目片段。",
@@ -1169,6 +1174,7 @@
       {
         title: "川大英才学子",
         type: "实习项目",
+        poster: "assets/posters/川大英才学子.mp4.png",
         goal: "人物采访的A-roll拍摄，在有限时间内完成内容采集、整理和新闻短片剪辑。",
         role: "人物摄像 / 素材整理 / 基础剪辑",
         action: "把素材顺序和重点信息整理出来，完成基础剪辑，让内容在有限时长里表达得更集中。",
@@ -1181,6 +1187,7 @@
       {
         title: "双林小学",
         type: "实习项目",
+        poster: "assets/posters/双林小学.mp4.png",
         goal: "学校B-roll外景拍摄，并在有限时长里完成新闻内容整理与成片剪辑输出。",
         role: "素材整理 / 外景拍摄/ 后期剪辑",
         action: "把素材顺序和重点信息整理出来，完成基础剪辑，让内容在有限时长里表达得更集中。",
@@ -1193,6 +1200,7 @@
       {
         title: "只此青绿",
         type: "微纪录片",
+        poster: "assets/posters/只此青绿.mp4.png",
         goal: "挖掘青年群像故事，做出一条结合热点、有传播性、有意义的微纪录片。",
         role: "导演/ 团队制片 / 拍摄执行",
         action: "前往甘肃民勤参与公益宣传，从前期调研整理到拍摄执行，与当地的配合沟通，把原本分散的想法一步步拍成结构更完整的内容。",
@@ -1205,6 +1213,7 @@
       {
         title: "我看见了",
         type: "微电影",
+        poster: "assets/posters/我看见了.mp4.png",
         goal: "微电影创作,策划并完成一条从策划到成片都完整闭环的剧情向内容表达。",
         role: "前期策划 / 拍摄执行 /项目推进",
         action: "负责场地人员协调、整体项目推进，并带领团队完成前期策划到拍摄剪辑，把不同环节往同一个成片方向收拢。",
@@ -1273,7 +1282,7 @@
               ? `
                   <div class="portfolio-cover video-cover">
                     <div class="video-status sans">代表作品</div>
-                    <video controls preload="metadata" playsinline>
+                    <video controls preload="metadata" playsinline webkit-playsinline poster="${item.poster || ""}">
                       <source src="${cosSample.url}" type="video/mp4" />
                     </video>
                   </div>
